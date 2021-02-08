@@ -7,15 +7,22 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		AD3BBB1625D1653200DA6F4E /* okashi1.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD3BBB1525D1653200DA6F4E /* okashi1.jpg */; };
+		AD3BBB1925D1653D00DA6F4E /* okashi2.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD3BBB1825D1653C00DA6F4E /* okashi2.jpg */; };
+		AD3BBB1C25D1654400DA6F4E /* okashi3.jpg in Resources */ = {isa = PBXBuildFile; fileRef = AD3BBB1B25D1654400DA6F4E /* okashi3.jpg */; };
 		ADD5392B25CD066F00F894DE /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD5392A25CD066F00F894DE /* AppDelegate.swift */; };
 		ADD5392D25CD066F00F894DE /* SceneDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD5392C25CD066F00F894DE /* SceneDelegate.swift */; };
 		ADD5392F25CD066F00F894DE /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD5392E25CD066F00F894DE /* ViewController.swift */; };
 		ADD5393225CD066F00F894DE /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADD5393025CD066F00F894DE /* Main.storyboard */; };
 		ADD5393425CD067100F894DE /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = ADD5393325CD067100F894DE /* Assets.xcassets */; };
 		ADD5393725CD067100F894DE /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = ADD5393525CD067100F894DE /* LaunchScreen.storyboard */; };
+		ADD5394025CD078200F894DE /* WidViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = ADD5393F25CD078200F894DE /* WidViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		AD3BBB1525D1653200DA6F4E /* okashi1.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = okashi1.jpg; sourceTree = "<group>"; };
+		AD3BBB1825D1653C00DA6F4E /* okashi2.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = okashi2.jpg; sourceTree = "<group>"; };
+		AD3BBB1B25D1654400DA6F4E /* okashi3.jpg */ = {isa = PBXFileReference; lastKnownFileType = image.jpeg; path = okashi3.jpg; sourceTree = "<group>"; };
 		ADD5392725CD066F00F894DE /* SlideshowApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SlideshowApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		ADD5392A25CD066F00F894DE /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		ADD5392C25CD066F00F894DE /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -24,6 +31,7 @@
 		ADD5393325CD067100F894DE /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		ADD5393625CD067100F894DE /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		ADD5393825CD067100F894DE /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		ADD5393F25CD078200F894DE /* WidViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = WidViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -56,9 +64,13 @@
 		ADD5392925CD066F00F894DE /* SlideshowApp */ = {
 			isa = PBXGroup;
 			children = (
+				AD3BBB1525D1653200DA6F4E /* okashi1.jpg */,
+				AD3BBB1825D1653C00DA6F4E /* okashi2.jpg */,
+				AD3BBB1B25D1654400DA6F4E /* okashi3.jpg */,
 				ADD5392A25CD066F00F894DE /* AppDelegate.swift */,
 				ADD5392C25CD066F00F894DE /* SceneDelegate.swift */,
 				ADD5392E25CD066F00F894DE /* ViewController.swift */,
+				ADD5393F25CD078200F894DE /* WidViewController.swift */,
 				ADD5393025CD066F00F894DE /* Main.storyboard */,
 				ADD5393325CD067100F894DE /* Assets.xcassets */,
 				ADD5393525CD067100F894DE /* LaunchScreen.storyboard */,
@@ -126,6 +138,9 @@
 			files = (
 				ADD5393725CD067100F894DE /* LaunchScreen.storyboard in Resources */,
 				ADD5393425CD067100F894DE /* Assets.xcassets in Resources */,
+				AD3BBB1625D1653200DA6F4E /* okashi1.jpg in Resources */,
+				AD3BBB1925D1653D00DA6F4E /* okashi2.jpg in Resources */,
+				AD3BBB1C25D1654400DA6F4E /* okashi3.jpg in Resources */,
 				ADD5393225CD066F00F894DE /* Main.storyboard in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -138,6 +153,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				ADD5392F25CD066F00F894DE /* ViewController.swift in Sources */,
+				ADD5394025CD078200F894DE /* WidViewController.swift in Sources */,
 				ADD5392B25CD066F00F894DE /* AppDelegate.swift in Sources */,
 				ADD5392D25CD066F00F894DE /* SceneDelegate.swift in Sources */,
 			);
