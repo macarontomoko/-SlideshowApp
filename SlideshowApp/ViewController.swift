@@ -7,70 +7,160 @@
 
 import UIKit
 
+
 class ViewController: UIViewController {
-
-    // outletの接続
     
-    @IBOutlet weak var imageView: UIImageView!
-    
-    // 配列に指定するindex番号を宣言
-    var nowIndex:Int = 0
-
-    // スライドショーに使用するタイマーを宣言
-    var timer: Timer!
     
     override func viewDidLoad() {
         super.viewDidLoad()
-
-        // スライドショーさせる画像の読み込み
-        let image1: UIImage!
-        let image2: UIImage!
-        let image3: UIImage!
         
-         //  Image Viewに画像を設定
-        image1 = UIImage(named: "okashi1")
-        image2 = UIImage(named: "okashi2)
-        image3 = UIImage(named: "okashi3")
+        let image1 = UIImage(named: "okashi1.jpg")
+        imageView.image = image1
+    }
+    
+    
+    @IBAction func tapAction(_ sender: Any) {
+        performSegue(withIdentifier:"result", sender: nil)
+    }
+    
+    
+    @IBOutlet weak var imageView: UIImageView!
+    
+    @IBOutlet weak var onNextButton: UIButton!
+    
+    @IBOutlet weak var onPrevButton: UIButton!
+    
+    @IBOutlet weak var goandstop: UIButton!
+    
+    
+    /// 表示している画像の番号
+    var dispImageNo = 0
+    
+    // スライドショーに使用するタイマーを宣言
+    var timer: Timer!
+    
+    // 画像の名前の配列
+    let imageNameArray = [
+        "okashi1.jpg",
+        "okashi2.jpg",
+        "okashi3.jpg",
+    ]
+    
+    @objc func changeImage() {
+        // indexを増やして表示する画像を切り替える
+        dispImageNo += 1
+        
+        // indexが表示予定の画像の数と同じ場合
+        if (dispImageNo == imageNameArray.count) {
+            // indexを一番最初の数字に戻す
+            dispImageNo = 0
+        }
+        // 画像表示
+        displayImage()
+    }
+    
+    /// 表示している画像の番号を元に画像を表示する
+    func displayImage() {
+        // 表示している画像の番号から名前を取り出し
+        let name = imageNameArray[dispImageNo]
+        // 画像を読み込み
+        let image = UIImage(named: name)
+        // Image Viewに読み込んだ画像をセット
+        imageView.image = image
+    }
+    
+    @IBAction func onPrev(_ sender: UIButton) {
+        
+        // 表示している画像の番号を1減らす
+        dispImageNo -= 1
+        if ( dispImageNo > 2 ) {
+            dispImageNo = 0 // 3になったら0に戻す
+        } else if (dispImageNo < 0){
+            dispImageNo = 2
+        }
+        print(dispImageNo)
+        // 画像表示
+        displayImage()
+        
+        // 再生中はボタンを無効にして、停止中はボタンを有効にする
+        if self.timer != nil{
+            sender.isEnabled = false
+        }else{
+            self.timer = nil
+                sender.isEnabled = true
+        }
         
     }
-
-    // 再生ボタンを押した時の処理
-    @IBAction func goandstart(_ sender: Any) {
+    
+    
+    @IBAction func onNext(_ sender: UIButton) {
+        
+        // 表示している画像の番号を1増やす
+        dispImageNo += 1
+        if ( dispImageNo > 2 ) {
+            dispImageNo = 0 // 3になったら0に戻す
+        } else if (dispImageNo < 0){
+            dispImageNo = 2
+        }
+        print(dispImageNo)
+        // 画像表示
+        displayImage()
+        
+        // 再生中はボタンを無効にして、停止中はボタンを有効にする
+        if self.timer != nil{
+            sender.isEnabled = false
+        }else{
+            self.timer = nil
+                sender.isEnabled = true
+        }
+        
+    }
+    
+    @IBAction func goandstop(_ sender: UIButton) {
         // 再生中か停止しているかを判定
         if (timer == nil) {
             // 再生時の処理を実装
-
             // タイマーをセットする
-            timer = Timer.scheduledTimer(timeInterval: 2.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
-
-            // ボタンの名前を停止に変える
-            goandstop.setTitle("停止", for: .normal)
-
+            timer = Timer.scheduledTimer(timeInterval:  2.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
+            
+            sender.setTitle("停止", for: .normal)
+            
+            
         } else {
             // 停止時の処理を実装
             // タイマーを停止する
             timer.invalidate()
-
+            
             // タイマーを削除しておく
             timer = nil
-
-            // ボタンの名前を再生に直しておく
-             goandstop.setTitle("再生", for:.normal)
+            
+            // 画像表示
+            displayImage()
+            
+            sender.setTitle("再生", for: .normal)
+            
         }
     }
-
-    @objc func changeImage() {
-        // indexを増やして表示する画像を切り替える
-        nowIndex += 1
-
-        // indexが表示予定の画像の数と同じ場合
-        if (nowIndex == imageArray.count) {
-            // indexを一番最初の数字に戻す
-            nowIndex = 0
-        }
-        // indexの画像をstoryboardの画像にセットする
-        imageView.image = imageArray[nowIndex]
-    }
-}
     
-   
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
+        // segueから遷移先のResultViewControllerを取得する
+        
+        let ViewController:WidViewController = segue.destination as! WidViewController
+        
+        //遷移先のWidtViewControllerで宣言しているimage2に画像を渡す
+        
+        ViewController.image2 = imageView.image
+        
+    }
+    
+    @IBAction func unwind(_ segue: UIStoryboardSegue) {
+        // 他の画面から segue を使って戻ってきた時に呼ばれる
+    }
+    
+}
+
+
+
+
+
+
