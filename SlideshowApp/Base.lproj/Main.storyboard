@@ -16,9 +16,8 @@
                         <rect key="frame" x="0.0" y="0.0" width="414" height="736"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" translatesAutoresizingMaskIntoConstraints="NO" id="5BF-v8-WEM">
+                            <imageView clipsSubviews="YES" contentMode="scaleAspectFit" horizontalHuggingPriority="251" verticalHuggingPriority="251" translatesAutoresizingMaskIntoConstraints="NO" id="5BF-v8-WEM">
                                 <rect key="frame" x="97" y="164" width="230" height="145"/>
-                                <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES" flexibleMaxY="YES"/>
                                 <accessibility key="accessibilityConfiguration">
                                     <bool key="isElement" value="YES"/>
                                 </accessibility>
@@ -60,7 +59,11 @@
                             <constraint firstItem="BJe-D9-kSu" firstAttribute="top" secondItem="HnZ-kV-SgU" secondAttribute="bottom" constant="69" id="aHA-yN-QFc"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="BJe-D9-kSu" secondAttribute="trailing" constant="133" id="fGU-dL-7gP"/>
                             <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="HnZ-kV-SgU" secondAttribute="trailing" constant="152" id="kmf-Uf-nY6"/>
+                            <constraint firstItem="6Tk-OE-BBY" firstAttribute="trailing" secondItem="5BF-v8-WEM" secondAttribute="trailing" constant="87" id="tEZ-Kt-MFC"/>
                             <constraint firstItem="HnZ-kV-SgU" firstAttribute="top" secondItem="P0j-ok-utG" secondAttribute="bottom" constant="89" id="wW1-nD-oPj"/>
+                            <constraint firstItem="P0j-ok-utG" firstAttribute="top" secondItem="5BF-v8-WEM" secondAttribute="bottom" constant="113" id="yOq-Ko-erV"/>
+                            <constraint firstItem="5BF-v8-WEM" firstAttribute="top" secondItem="6Tk-OE-BBY" secondAttribute="top" constant="164" id="zbb-dq-WeB"/>
+                            <constraint firstItem="5BF-v8-WEM" firstAttribute="leading" secondItem="6Tk-OE-BBY" secondAttribute="leading" constant="97" id="zgL-PP-SXl"/>
                         </constraints>
                     </view>
                     <connections>
