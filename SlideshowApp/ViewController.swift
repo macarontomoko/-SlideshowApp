@@ -25,6 +25,11 @@ class ViewController: UIViewController {
             self.timer.invalidate()
             self.timer = nil
         }
+        //ボタンを有効にする
+        onNextButton.isEnabled = true
+        onPrevButton.isEnabled = true
+        
+        goandstop.setTitle("再生", for: .normal)
     }
     
     
@@ -137,6 +142,7 @@ class ViewController: UIViewController {
             
         }
     }
+    
     
     override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         // segueから遷移先のResultViewControllerを取得する
