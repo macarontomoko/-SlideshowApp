@@ -21,6 +21,10 @@ class ViewController: UIViewController {
     
     @IBAction func tapAction(_ sender: Any) {
         performSegue(withIdentifier:"result", sender: nil)
+        if self.timer != nil{
+            self.timer.invalidate()
+            self.timer = nil
+        }
     }
     
     
@@ -32,12 +36,11 @@ class ViewController: UIViewController {
     
     @IBOutlet weak var goandstop: UIButton!
     
+    var timer: Timer!
     
     /// 表示している画像の番号
     var dispImageNo = 0
     
-    // スライドショーに使用するタイマーを宣言
-    var timer: Timer!
     
     // 画像の名前の配列
     let imageNameArray = [
@@ -82,16 +85,8 @@ class ViewController: UIViewController {
         // 画像表示
         displayImage()
         
-        // 再生中はボタンを無効にして、停止中はボタンを有効にする
-        if self.timer != nil{
-            sender.isEnabled = false
-        }else{
-            self.timer = nil
-                sender.isEnabled = true
-        }
         
     }
-    
     
     @IBAction func onNext(_ sender: UIButton) {
         
@@ -106,15 +101,8 @@ class ViewController: UIViewController {
         // 画像表示
         displayImage()
         
-        // 再生中はボタンを無効にして、停止中はボタンを有効にする
-        if self.timer != nil{
-            sender.isEnabled = false
-        }else{
-            self.timer = nil
-                sender.isEnabled = true
-        }
-        
     }
+    
     
     @IBAction func goandstop(_ sender: UIButton) {
         // 再生中か停止しているかを判定
@@ -124,6 +112,10 @@ class ViewController: UIViewController {
             timer = Timer.scheduledTimer(timeInterval:  2.0, target: self, selector: #selector(changeImage), userInfo: nil, repeats: true)
             
             sender.setTitle("停止", for: .normal)
+            
+            // 再生中はボタンを無効にする
+            onNextButton.isEnabled = false
+            onPrevButton.isEnabled = false
             
             
         } else {
@@ -138,6 +130,10 @@ class ViewController: UIViewController {
             displayImage()
             
             sender.setTitle("再生", for: .normal)
+            
+            // 停止中はボタンを有効にする
+            onNextButton.isEnabled = true
+            onPrevButton.isEnabled = true
             
         }
     }
@@ -158,6 +154,7 @@ class ViewController: UIViewController {
     }
     
 }
+
 
 
 

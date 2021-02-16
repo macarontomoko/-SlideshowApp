@@ -8,13 +8,10 @@
 import UIKit
 
 class WidViewController: UIViewController {
+    
     @IBOutlet weak var imageView2: UIImageView!
     
     var image2: UIImage!
-    
-    @IBAction func unwind(_ segue: UIStoryboardSegue){
-        
-    }
     
     override func viewDidLoad() {
         super.viewDidLoad()
